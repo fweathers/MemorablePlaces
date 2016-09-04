@@ -16,7 +16,7 @@ class ViewController: UIViewController, MKMapViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        print(activePlace)
+        print("\n The row selected is : \(activePlace)")
         
     }
     

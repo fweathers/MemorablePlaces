@@ -17,7 +17,13 @@ class PlacesTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // does not get called when the back button is pressed
 
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        
         if places.count == 1 && places[0].count == 0 {
             
             places.remove(at: 0)
@@ -27,7 +33,7 @@ class PlacesTableViewController: UITableViewController {
         
         activePlace = -1
         table.reloadData()
-        
+
     }
 
     override func didReceiveMemoryWarning() {

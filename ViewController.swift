@@ -65,7 +65,19 @@ class ViewController: UIViewController, MKMapViewDelegate {
     
     func longpress(gesturerecognizer: UILongPressGestureRecognizer) {
         
-        print("long press")
+        let touchpoint = gesturerecognizer.location(in: self.map)
+        
+        let newCoordinate = self.map.convert(touchpoint, toCoordinateFrom: self.map)
+        
+        print(newCoordinate)
+        
+        let annotation = MKPointAnnotation()
+        
+        annotation.coordinate = newCoordinate
+        
+        annotation.title = "Temp title"
+        
+        self.map.addAnnotation(annotation)
     }
     
     override func didReceiveMemoryWarning() {

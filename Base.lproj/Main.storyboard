@@ -9,17 +9,17 @@
         <!--Places-->
         <scene sceneID="Cay-cL-ssv">
             <objects>
-                <tableViewController id="85g-ZY-qm3" sceneMemberID="viewController">
+                <tableViewController id="85g-ZY-qm3" customClass="PlacesTableViewController" customModule="MemorablePlaces" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="238-EC-VmU">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="fJL-de-BRw">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="fJL-de-BRw">
                                 <frame key="frameInset" minY="92" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="fJL-de-BRw" id="C7h-2N-nvo">
-                                    <frame key="frameInset" width="375" height="43"/>
+                                    <frame key="frameInset" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -32,7 +32,7 @@
                     <navigationItem key="navigationItem" title="Places" id="TnK-cc-LIv">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="2iP-7Z-1AO">
                             <connections>
-                                <segue destination="BYZ-38-t0r" kind="show" id="nwd-Qg-UYd"/>
+                                <segue destination="BYZ-38-t0r" kind="show" identifier="toMap" id="nwd-Qg-UYd"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

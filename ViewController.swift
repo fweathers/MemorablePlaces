@@ -16,6 +16,12 @@ class ViewController: UIViewController, MKMapViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let uilpgr = UILongPressGestureRecognizer(target: self, action: #selector(ViewController.longpress(gesturerecognizer:)))
+        
+        uilpgr.minimumPressDuration = 2
+        
+        map.addGestureRecognizer(uilpgr)
+        
         if activePlace != -1 {
             
             if places.count > activePlace {
@@ -48,7 +54,6 @@ class ViewController: UIViewController, MKMapViewDelegate {
                                 }
                             }
                         }
-                        
                     }
                 }
             }
@@ -56,6 +61,11 @@ class ViewController: UIViewController, MKMapViewDelegate {
         
         print("\n The row selected is : \(activePlace)")
         
+    }
+    
+    func longpress(gesturerecognizer: UILongPressGestureRecognizer) {
+        
+        print("long press")
     }
     
     override func didReceiveMemoryWarning() {

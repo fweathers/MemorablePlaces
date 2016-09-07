@@ -36,7 +36,7 @@ class ViewController: UIViewController, MKMapViewDelegate {
                                 
                                 if let longitude = Double(lon) {
                                     
-                                    let span = MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05)
+                                    let span = MKCoordinateSpan(latitudeDelta: 0.5, longitudeDelta: 0.5)
                                     
                                     let coordinate = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
                                     
@@ -65,19 +65,22 @@ class ViewController: UIViewController, MKMapViewDelegate {
     
     func longpress(gesturerecognizer: UILongPressGestureRecognizer) {
         
-        let touchpoint = gesturerecognizer.location(in: self.map)
-        
-        let newCoordinate = self.map.convert(touchpoint, toCoordinateFrom: self.map)
-        
-        print(newCoordinate)
-        
-        let annotation = MKPointAnnotation()
-        
-        annotation.coordinate = newCoordinate
-        
-        annotation.title = "Temp title"
-        
-        self.map.addAnnotation(annotation)
+        if gesturerecognizer.state == UIGestureRecognizerState.began {
+            
+            let touchpoint = gesturerecognizer.location(in: self.map)
+            
+            let newCoordinate = self.map.convert(touchpoint, toCoordinateFrom: self.map)
+            
+            print(newCoordinate)
+            
+            let annotation = MKPointAnnotation()
+            
+            annotation.coordinate = newCoordinate
+            
+            annotation.title = "Temp title"
+            
+            self.map.addAnnotation(annotation)
+        }
     }
     
     override func didReceiveMemoryWarning() {
